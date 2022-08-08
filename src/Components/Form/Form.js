@@ -13,31 +13,50 @@ const Form = () => {
     )
 
     const handleChange = (event) => {
+        const { name, value } = event.target
+        
+        let checkTahunTerbit
+        if (name === "tahunTerbit") {
+            let checkNull = value.toString()
+            if (value > new Date().getFullYear()) {
+                checkTahunTerbit = new Date().getFullYear()
+            }
+            else if (value < 0 || checkNull[0] === "0") {
+                checkTahunTerbit = 1
+            }
+            else {
+                checkTahunTerbit = value
+            }
+        }
+
         setFormData(prevState => {
             return {
                 ...prevState,
-                [event.target.name]: event.target.value
+                [name]: name === "tahunTerbit" ? checkTahunTerbit : value
             }
         })
     }
 
+    
+
     return (
         <div>
-            <form>
+            <form >
                 <input
                     type="text"
                     placeholder="Nama Penulis"
                     name="namaPenulis"
                     onChange={handleChange}
                     value={formData.namaPenulis}
+                    required
                 />
                 <input
                     type="number"
-                    max={new Date().getFullYear}
                     placeholder="Tahun Terbit"
                     name="tahunTerbit"
                     onChange={handleChange}
                     value={formData.tahunTerbit}
+                    required
                 />
                 <input
                     type="text"
@@ -45,6 +64,7 @@ const Form = () => {
                     name="judulBuku"
                     onChange={handleChange}
                     value={formData.judulBuku}
+                    required
                 />
                 <input
                     type="text"
@@ -52,6 +72,7 @@ const Form = () => {
                     name="tempatTerbit"
                     onChange={handleChange}
                     value={formData.tempatTerbit}
+                    required
                 />
                 <input
                     type="text"
@@ -59,6 +80,7 @@ const Form = () => {
                     name="namaPenerbit"
                     onChange={handleChange}
                     value={formData.namaPenerbit}
+                    required
                 />
             </form>
             <Pustaka
