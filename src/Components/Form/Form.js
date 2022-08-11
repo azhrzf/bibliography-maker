@@ -84,11 +84,7 @@ const Form = () => {
                 />
             </form>
             <Pustaka
-                namaPenulis={formData.namaPenulis}
-                tahunTerbit={formData.tahunTerbit}
-                judulBuku={formData.judulBuku}
-                tempatTerbit={formData.tempatTerbit}
-                namaPenerbit={formData.namaPenerbit}
+                dataBuku={formData}
             />
         </div>
     )
