@@ -41,6 +41,17 @@ const Pustaka = ({ dataBuku }) => {
         return inisialNama
     }
 
+    const mainStyle = (dataBuku) => {
+        if (dataBuku.namaPenulis && dataBuku.tahunTerbit && dataBuku.judulBuku && dataBuku.tempatTerbit && dataBuku.namaPenerbit) {
+            return {
+                color: "black"
+            }
+        }
+        return {
+            color: "red"
+        }
+    }
+
     return (
         <div>
             {/* <SetPustaka
@@ -50,7 +61,8 @@ const Pustaka = ({ dataBuku }) => {
                 tempatTerbit={`${otomatisKapital(dataBuku.tempatTerbit, dataBuku.tempatKapital)}: `}
                 namaPenerbit={`${otomatisKapital(dataBuku.namaPenerbit, dataBuku.penerbitKapital)}.`}
             /> */}
-            <p> {dataBuku.namaPenulis && `${inisialNama(dataBuku)}. `}
+            <p style={mainStyle(dataBuku)}>
+                {dataBuku.namaPenulis && `${inisialNama(dataBuku)}. `}
                 {dataBuku.tahunTerbit && `(${dataBuku.tahunTerbit}). `}
                 <i>{dataBuku.judulBuku && `${otomatisKapital(dataBuku.judulBuku, dataBuku.bukuKapital)}. `}</i>
                 {dataBuku.tempatTerbit && `${otomatisKapital(dataBuku.tempatTerbit, dataBuku.tempatKapital)}: `}
