@@ -5,16 +5,20 @@ const Form = () => {
     const [formData, setFormData] = React.useState(
         {
             namaPenulis: "",
+            namaKapital: false,
             tahunTerbit: "",
             judulBuku: "",
+            judulKapital: false,
             tempatTerbit: "",
-            namaPenerbit: ""
+            tempatKapital: false,
+            namaPenerbit: "",
+            penerbitKapital: false
         }
     )
 
     const handleChange = (event) => {
-        const { name, value } = event.target
-        
+        const { name, value, type, checked } = event.target
+
         let checkTahunTerbit
         if (name === "tahunTerbit") {
             let checkNull = value.toString()
@@ -32,12 +36,12 @@ const Form = () => {
         setFormData(prevState => {
             return {
                 ...prevState,
-                [name]: name === "tahunTerbit" ? checkTahunTerbit : value
+                [name]: type === "number" ? checkTahunTerbit : (type === "checkbox" ? checked : value)
             }
         })
     }
 
-    
+
 
     return (
         <div>
@@ -51,6 +55,15 @@ const Form = () => {
                     required
                 />
                 <input
+                    type="checkbox"
+                    id="namaKapital"
+                    onChange={handleChange}
+                    checked={formData.namaKapital}
+                    name="namaKapital"
+                />
+                <label htmlFor="namaKapital">Kapital Otomatis Nama</label>
+                <br/>
+                <input
                     type="number"
                     placeholder="Tahun Terbit"
                     name="tahunTerbit"
@@ -58,6 +71,7 @@ const Form = () => {
                     value={formData.tahunTerbit}
                     required
                 />
+                <br/>
                 <input
                     type="text"
                     placeholder="Judul Buku"
@@ -66,6 +80,15 @@ const Form = () => {
                     value={formData.judulBuku}
                     required
                 />
+                 <input
+                    type="checkbox"
+                    id="judulKapital"
+                    onChange={handleChange}
+                    checked={formData.judulKapital}
+                    name="judulKapital"
+                />
+                <label htmlFor="judulKapital">Kapital Otomatis Judul Buku</label>
+                <br/>
                 <input
                     type="text"
                     placeholder="Tempat Terbit"
@@ -74,6 +97,15 @@ const Form = () => {
                     value={formData.tempatTerbit}
                     required
                 />
+                 <input
+                    type="checkbox"
+                    id="tempatKapital"
+                    onChange={handleChange}
+                    checked={formData.tempatKapital}
+                    name="tempatKapital"
+                />
+                <label htmlFor="tempatKapital">Kapital Otomatis Tempat Terbit</label>
+                <br/>
                 <input
                     type="text"
                     placeholder="Nama Penerbit"
@@ -82,6 +114,14 @@ const Form = () => {
                     value={formData.namaPenerbit}
                     required
                 />
+                 <input
+                    type="checkbox"
+                    id="penerbitKapital"
+                    onChange={handleChange}
+                    checked={formData.penerbitKapital}
+                    name="penerbitKapital"
+                />
+                <label htmlFor="penerbitKapital">Kapital Otomatis Nama Penerbit</label>
             </form>
             <Pustaka
                 dataBuku={formData}
