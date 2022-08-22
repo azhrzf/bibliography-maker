@@ -8,7 +8,7 @@ const Pustaka = ({ dataBuku }) => {
             let setelahKapital = ""
             const buatKapital = yangKapital.toString().trim()
             const kapitalBaru = buatKapital.split(" ").map(kapital => {
-                return kapital[0].toUpperCase() + kapital.slice(1, kapital.length).toLowerCase()
+                return kapital[0].toUpperCase() + kapital.slice(1, kapital.length)
             })
             if (kapitalBaru.length > 1) {
                 for (let i = 0; i < kapitalBaru.length; i++) {
@@ -27,7 +27,7 @@ const Pustaka = ({ dataBuku }) => {
         let inisialNama = ""
         const buatInisial = dataBuku.namaPenulis.toString().trim()
         const inisialBaru = buatInisial.split(" ").map(inisial => {
-            return (dataBuku.namaKapital ? inisial[0].toUpperCase() : inisial[0]) + inisial.slice(1, inisial.length).toLowerCase()
+            return inisial[0] + inisial.slice(1, inisial.length).toLowerCase()
         })
         if (inisialBaru.length > 1) {
             inisialNama = `${inisialBaru[inisialBaru.length - 1]},`
@@ -37,6 +37,15 @@ const Pustaka = ({ dataBuku }) => {
         }
         else {
             inisialNama = inisialBaru[0].trim()
+        }
+        if (dataBuku.namaPenulis2 && dataBuku.namaPenulis3 && dataBuku.namaPenulis4) {
+            return `${inisialNama} dkk`
+        }
+        else if (dataBuku.namaPenulis2 && dataBuku.namaPenulis3) {
+            return `${inisialNama}. ${dataBuku.namaPenulis2}., dan ${dataBuku.namaPenulis3}`
+        }
+        else if (dataBuku.namaPenulis2) {
+            return `${inisialNama} dan ${dataBuku.namaPenulis2}`
         }
         return inisialNama
     }
@@ -62,11 +71,11 @@ const Pustaka = ({ dataBuku }) => {
                 namaPenerbit={`${otomatisKapital(dataBuku.namaPenerbit, dataBuku.penerbitKapital)}.`}
             /> */}
             <p style={mainStyle(dataBuku)}>
-                {dataBuku.namaPenulis && `${inisialNama(dataBuku)}. `}
+                {dataBuku.namaPenulis && `${otomatisKapital(inisialNama(dataBuku), dataBuku.kapitalOtomatis)}. `}
                 {dataBuku.tahunTerbit && `(${dataBuku.tahunTerbit}). `}
-                <i>{dataBuku.judulBuku && `${otomatisKapital(dataBuku.judulBuku, dataBuku.bukuKapital)}. `}</i>
-                {dataBuku.tempatTerbit && `${otomatisKapital(dataBuku.tempatTerbit, dataBuku.tempatKapital)}: `}
-                {dataBuku.namaPenerbit && `${otomatisKapital(dataBuku.namaPenerbit, dataBuku.penerbitKapital)}.`}
+                <i>{dataBuku.judulBuku && `${otomatisKapital(dataBuku.judulBuku, dataBuku.kapitalOtomatis)}. `}</i>
+                {dataBuku.tempatTerbit && `${otomatisKapital(dataBuku.tempatTerbit, dataBuku.kapitalOtomatis)}: `}
+                {dataBuku.namaPenerbit && `${otomatisKapital(dataBuku.namaPenerbit, dataBuku.kapitalOtomatis)}.`}
             </p>
         </div>
     )
