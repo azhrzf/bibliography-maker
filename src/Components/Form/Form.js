@@ -92,6 +92,7 @@ const Form = () => {
                     ...prevState,
                     namaPenulis2: formData.namaPenulis3 ? formData.namaPenulis3 : "",
                     namaPenulis3: formData.namaPenulis4 ? formData.namaPenulis4 : "",
+                    namaPenulis4: "",
                     penulisLain: {
                         penulis2: formData.penulisLain.penulis3 ? true : false,
                         penulis3: formData.penulisLain.penulis4 ? true : false,
@@ -106,6 +107,7 @@ const Form = () => {
                 return {
                     ...prevState,
                     namaPenulis3: formData.namaPenulis4 ? formData.namaPenulis4 : "",
+                    namaPenulis4: "",
                     penulisLain: {
                         penulis2: true,
                         penulis3: formData.penulisLain.penulis4 ? true : false,
