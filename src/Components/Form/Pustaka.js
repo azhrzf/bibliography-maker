@@ -1,5 +1,4 @@
 import React from "react"
-// import SetPustaka from "./SetPustaka"
 
 const Pustaka = ({ dataBuku }) => {
 
@@ -8,7 +7,7 @@ const Pustaka = ({ dataBuku }) => {
             let setelahKapital = ""
             const buatKapital = yangKapital.toString().trim()
             const kapitalBaru = buatKapital.split(" ").map(kapital => {
-                return kapital[0].toUpperCase() + kapital.slice(1, kapital.length)
+                return ((kapital === "dan") || (kapital === "dkk") ? kapital[0] : kapital[0].toUpperCase()) + kapital.slice(1, kapital.length)
             })
             if (kapitalBaru.length > 1) {
                 for (let i = 0; i < kapitalBaru.length; i++) {
@@ -63,13 +62,6 @@ const Pustaka = ({ dataBuku }) => {
 
     return (
         <div>
-            {/* <SetPustaka
-                namaPenulis={`${inisialNama(dataBuku)}. `}
-                tahunTerbit={`(${dataBuku.tahunTerbit}). `}
-                judulBuku={`${otomatisKapital(dataBuku.judulBuku, dataBuku.bukuKapital)}. `}
-                tempatTerbit={`${otomatisKapital(dataBuku.tempatTerbit, dataBuku.tempatKapital)}: `}
-                namaPenerbit={`${otomatisKapital(dataBuku.namaPenerbit, dataBuku.penerbitKapital)}.`}
-            /> */}
             <p style={mainStyle(dataBuku)}>
                 {dataBuku.namaPenulis && `${otomatisKapital(inisialNama(dataBuku), dataBuku.kapitalOtomatis)}. `}
                 {dataBuku.tahunTerbit && `(${dataBuku.tahunTerbit}). `}

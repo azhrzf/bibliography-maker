@@ -99,6 +99,7 @@ const Form = () => {
                     }
                 }
             })
+            console.log(formData)
         }
         else if (hapus === 3) {
             setFormData(prevState => {
@@ -112,11 +113,13 @@ const Form = () => {
                     }
                 }
             })
+            console.log(formData)
         }
         else if (hapus === 4) {
             setFormData(prevState => {
                 return {
                     ...prevState,
+                    namaPenulis4: "",
                     penulisLain: {
                         penulis2: true,
                         penulis3: true,
@@ -124,6 +127,7 @@ const Form = () => {
                     }
                 }
             })
+            console.log(formData)
         }
     }
 
