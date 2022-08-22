@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/daftar-pustaka/static/css/main.31d6cfe0.css",
-    "main.js": "/daftar-pustaka/static/js/main.7ea915ed.js",
+    "main.js": "/daftar-pustaka/static/js/main.47059d26.js",
     "index.html": "/daftar-pustaka/index.html",
-    "main.7ea915ed.js.map": "/daftar-pustaka/static/js/main.7ea915ed.js.map"
+    "main.47059d26.js.map": "/daftar-pustaka/static/js/main.47059d26.js.map"
   },
   "entrypoints": [
     "static/css/main.31d6cfe0.css",
-    "static/js/main.7ea915ed.js"
+    "static/js/main.47059d26.js"
   ]
 }
