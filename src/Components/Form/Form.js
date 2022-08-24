@@ -134,10 +134,10 @@ const Form = () => {
     }
 
     return (
-        <div>
+        <div className="form">
             <form>
                 <input
-                    className="formBuku"
+                    
                     type="text"
                     placeholder="Nama Penulis"
                     name="namaPenulis"
@@ -146,13 +146,13 @@ const Form = () => {
                     required
                 />
                 <input
-                    className="formBuku"
+                    
                     onClick={tambahPenulis}
                     type={formData.penulisLain.penulis4 ? "hidden" : "button"}
                     value="Tambah Penulis"
                 />
                 <input
-                    className="formBuku"
+                    
                     type={formData.penulisLain.penulis2 ? "text" : "hidden"}
                     placeholder="Nama Penulis 2"
                     name="namaPenulis2"
@@ -161,13 +161,13 @@ const Form = () => {
                     required
                 />
                 <input
-                    className="formBuku"
+                    
                     onClick={() => hapusPenulis(2)}
                     type={formData.penulisLain.penulis2 ? "button" : "hidden"}
                     value="Hapus"
                 />
                 <input
-                    className="formBuku"
+                    
                     type={formData.penulisLain.penulis3 ? "text" : "hidden"}
                     placeholder="Nama Penulis 3"
                     name="namaPenulis3"
@@ -176,13 +176,13 @@ const Form = () => {
                     required
                 />
                 <input
-                    className="formBuku"
+                    
                     onClick={() => hapusPenulis(3)}
                     type={formData.penulisLain.penulis3 ? "button" : "hidden"}
                     value="Hapus"
                 />
                 <input
-                    className="formBuku"
+                    
                     type={formData.penulisLain.penulis4 ? "text" : "hidden"}
                     placeholder="Nama Penulis 4"
                     name="namaPenulis4"
@@ -191,13 +191,13 @@ const Form = () => {
                     required
                 />
                 <input
-                    className="formBuku"
+                    
                     onClick={() => hapusPenulis(4)}
                     type={formData.penulisLain.penulis4 ? "button" : "hidden"}
                     value="Hapus"
                 />
                 <input
-                    className="formBuku"
+                    
                     type="number"
                     placeholder="Tahun Terbit"
                     name="tahunTerbit"
@@ -206,7 +206,7 @@ const Form = () => {
                     required
                 />
                 <input
-                    className="formBuku"
+                    
                     type="text"
                     placeholder="Judul Buku"
                     name="judulBuku"
@@ -215,7 +215,7 @@ const Form = () => {
                     required
                 />
                 <input
-                    className="formBuku"
+                    
                     type="text"
                     placeholder="Tempat Terbit"
                     name="tempatTerbit"
@@ -224,7 +224,7 @@ const Form = () => {
                     required
                 />
                 <input
-                    className="formBuku"
+                    
                     type="text"
                     placeholder="Nama Penerbit"
                     name="namaPenerbit"
@@ -233,7 +233,7 @@ const Form = () => {
                     required
                 />
                 <input
-                    className="formBuku"
+                    
                     type="checkbox"
                     id="kapitalOtomatis"
                     onChange={handleChange}

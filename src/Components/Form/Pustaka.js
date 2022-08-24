@@ -61,7 +61,7 @@ const Pustaka = ({ dataBuku }) => {
     }
 
     return (
-        <div>
+        <div className="pustaka">
             <p style={mainStyle(dataBuku)}>
                 {dataBuku.namaPenulis && `${otomatisKapital(inisialNama(dataBuku), dataBuku.kapitalOtomatis)}. `}
                 {dataBuku.tahunTerbit && `(${dataBuku.tahunTerbit}). `}

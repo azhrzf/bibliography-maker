@@ -1,4 +1,62 @@
-.formBuku {
+* {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #fafafa;
+}
+
+.navbar {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 15px 50px 15px 50px;
+    box-shadow: rgba(142, 142, 142, 0.3) 0px 3px 2px 0px;
+    border-bottom: 1px solid #EAEAEA;
+}
+
+.navbar>img {
+    margin-left: auto;
+    height: 30px;
+}
+
+.form {
+    padding: 20px 40px 20px 40px;
+    height: 200px;
+    background-color: #FC6767;
+    display: grid;
+    justify-content: center;
+    grid-template-rows: 400px 200px
+}
+
+.form>form {
+    margin-top: 20px;
+    padding: 20px 40px 20px 40px;
+    width: 600px;
+    background-color: #FFFFFF;
+    border: 1px solid #E1E1E1;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+form>input {
+    margin: 10px 10px 10px 0px;
+    width: 100%;
     display: block;
-    margin: 10px;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form>.pustaka {
+    background-color: white;
+}
+
+@media screen and (max-width: 650px) {
+    .form>form {
+        width: 100%;
+    }
+
 }
