@@ -233,7 +233,7 @@ const Form = () => {
                     required
                 />
                 <input
-                    
+                    className="checkbox" 
                     type="checkbox"
                     id="kapitalOtomatis"
                     onChange={handleChange}
