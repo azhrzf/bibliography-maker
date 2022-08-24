@@ -27,7 +27,6 @@ body {
     background-color: #FC6767;
     display: grid;
     justify-content: center;
-    grid-template-rows: 400px 200px
 }
 
 .form>form {
