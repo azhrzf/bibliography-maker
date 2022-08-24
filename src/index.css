@@ -8,6 +8,8 @@ body {
 }
 
 .navbar {
+    position: sticky;
+    top: 0px;
     background-color: white;
     display: flex;
     align-items: center;
@@ -23,23 +25,23 @@ body {
 
 .form {
     padding: 20px 40px 20px 40px;
-    height: 200px;
+    height: 400px;
     background-color: #FC6767;
     display: grid;
     justify-content: center;
 }
 
 .form>form {
-    margin-top: 20px;
+    margin-top: 30px;
     padding: 20px 40px 20px 40px;
-    width: 600px;
+    width: 800px;
     background-color: #FFFFFF;
     border: 1px solid #E1E1E1;
     box-sizing: border-box;
     border-radius: 8px;
 }
 
-form>input {
+input {
     margin: 10px 10px 10px 0px;
     width: 100%;
     display: block;
@@ -49,23 +51,49 @@ form>input {
     box-sizing: border-box;
 }
 
-form>.checkbox, label {
+form>.checkbox,
+label {
     width: auto;
     display: inline;
 }
 
+.pustakaUn {
+    text-align: justify;
+    color: red;
+}
+
 .pustaka {
+    text-align: justify;
     margin-top: 20px;
     padding: 20px 40px 20px 40px;
-    width: 600px;
+    width: 800px;
     background-color: #FFFFFF;
     border: 1px solid #E1E1E1;
     box-sizing: border-box;
     border-radius: 8px;
 }
 
-@media screen and (max-width: 650px) {
-    .form>form, .pustaka {
+.larikPustaka {
+    text-align: justify;
+    text-indent: -40px;
+    margin-top: 20px;
+    padding: 20px 40px 20px 80px;
+    width: 800px;
+    background-color: #FFFFFF;
+    border: 1px solid #E1E1E1;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.larikPustaka > p {
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 850px) {
+
+    .form>form,
+    .pustaka,
+    .larikPustaka {
         width: 100%;
     }
 

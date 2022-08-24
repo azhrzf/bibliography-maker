@@ -137,7 +137,6 @@ const Form = () => {
         <div className="form">
             <form>
                 <input
-                    
                     type="text"
                     placeholder="Nama Penulis"
                     name="namaPenulis"
@@ -146,13 +145,11 @@ const Form = () => {
                     required
                 />
                 <input
-                    
                     onClick={tambahPenulis}
                     type={formData.penulisLain.penulis4 ? "hidden" : "button"}
                     value="Tambah Penulis"
                 />
                 <input
-                    
                     type={formData.penulisLain.penulis2 ? "text" : "hidden"}
                     placeholder="Nama Penulis 2"
                     name="namaPenulis2"
@@ -161,13 +158,11 @@ const Form = () => {
                     required
                 />
                 <input
-                    
                     onClick={() => hapusPenulis(2)}
                     type={formData.penulisLain.penulis2 ? "button" : "hidden"}
                     value="Hapus"
                 />
                 <input
-                    
                     type={formData.penulisLain.penulis3 ? "text" : "hidden"}
                     placeholder="Nama Penulis 3"
                     name="namaPenulis3"
@@ -194,7 +189,6 @@ const Form = () => {
                     value="Hapus"
                 />
                 <input
-                    
                     type="number"
                     placeholder="Tahun Terbit"
                     name="tahunTerbit"
@@ -203,7 +197,6 @@ const Form = () => {
                     required
                 />
                 <input
-                    
                     type="text"
                     placeholder="Judul Buku"
                     name="judulBuku"
@@ -212,7 +205,6 @@ const Form = () => {
                     required
                 />
                 <input
-                    
                     type="text"
                     placeholder="Tempat Terbit"
                     name="tempatTerbit"
@@ -221,7 +213,6 @@ const Form = () => {
                     required
                 />
                 <input
-                    
                     type="text"
                     placeholder="Nama Penerbit"
                     name="namaPenerbit"
