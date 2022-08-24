@@ -176,13 +176,11 @@ const Form = () => {
                     required
                 />
                 <input
-                    
                     onClick={() => hapusPenulis(3)}
                     type={formData.penulisLain.penulis3 ? "button" : "hidden"}
                     value="Hapus"
                 />
                 <input
-                    
                     type={formData.penulisLain.penulis4 ? "text" : "hidden"}
                     placeholder="Nama Penulis 4"
                     name="namaPenulis4"
@@ -191,7 +189,6 @@ const Form = () => {
                     required
                 />
                 <input
-                    
                     onClick={() => hapusPenulis(4)}
                     type={formData.penulisLain.penulis4 ? "button" : "hidden"}
                     value="Hapus"
