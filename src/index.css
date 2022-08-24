@@ -54,12 +54,18 @@ form>.checkbox, label {
     display: inline;
 }
 
-form>.pustaka {
-    background-color: white;
+.pustaka {
+    margin-top: 20px;
+    padding: 20px 40px 20px 40px;
+    width: 600px;
+    background-color: #FFFFFF;
+    border: 1px solid #E1E1E1;
+    box-sizing: border-box;
+    border-radius: 8px;
 }
 
 @media screen and (max-width: 650px) {
-    .form>form {
+    .form>form, .pustaka {
         width: 100%;
     }
 

@@ -62,20 +62,12 @@ const Pustaka = ({ dataBuku }) => {
 
     const secondStyle = (dataBuku) => { 
         if (dataBuku.namaPenulis || dataBuku.tahunTerbit || dataBuku.judulBuku || dataBuku.tempatTerbit || dataBuku.namaPenerbit) {
-            return {
-                marginTop: "20px",
-                padding: "20px 40px 20px 40px",
-                width: "600px",
-                backgroundColor: "#FFFFFF",
-                border: "1px solid #E1E1E1",
-                boxSizing: "border-box",
-                borderRadius: "8px"
-            }
+            return "pustaka"
         }
     }
 
     return (
-        <div className="pustaka" style={secondStyle(dataBuku)}>
+        <div className={secondStyle(dataBuku)}>
             <p style={mainStyle(dataBuku)}>
                 {dataBuku.namaPenulis && `${otomatisKapital(inisialNama(dataBuku), dataBuku.kapitalOtomatis)}. `}
                 {dataBuku.tahunTerbit && `(${dataBuku.tahunTerbit}). `}
