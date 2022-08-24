@@ -68,13 +68,11 @@ const Pustaka = ({ dataBuku }) => {
 
     return (
         <div className={secondStyle(dataBuku)}>
-            <p style={mainStyle(dataBuku)}>
-                {dataBuku.namaPenulis && `${otomatisKapital(inisialNama(dataBuku), dataBuku.kapitalOtomatis)}. `}
-                {dataBuku.tahunTerbit && `(${dataBuku.tahunTerbit}). `}
-                <i>{dataBuku.judulBuku && `${otomatisKapital(dataBuku.judulBuku, dataBuku.kapitalOtomatis)}. `}</i>
-                {dataBuku.tempatTerbit && `${otomatisKapital(dataBuku.tempatTerbit, dataBuku.kapitalOtomatis)}: `}
-                {dataBuku.namaPenerbit && `${otomatisKapital(dataBuku.namaPenerbit, dataBuku.kapitalOtomatis)}.`}
-            </p>
+            <p style={mainStyle(dataBuku)}> {jadiPustaka(dataBuku)}</p>
+            {larikPustaka.map(larik => {
+                return <p>{`${larik.namaPenulis} ${larik.tahunTerbit}`} <i>{`${larik.judulBuku}`}</i> {`${larik.tempatTerbit} ${larik.namaPenerbit}`}</p>
+            })}
+            <button type="button" onClick={() => isiLarikPustaka(dataBuku)}>Button</button>
         </div>
     )
 }
