@@ -1,5 +1,5 @@
 import React from "react"
-import Pustaka from "./Pustaka"
+import Pustaka from "./Pustaka/Pustaka"
 
 const Form = () => {
     const [formData, setFormData] = React.useState(
@@ -48,40 +48,55 @@ const Form = () => {
 
     const tambahPenulis = () => {
         if (formData.penulisLain.penulis2 && formData.penulisLain.penulis3) {
-            setFormData(prevState => {
-                return {
-                    ...prevState,
-                    penulisLain: {
-                        penulis2: true,
-                        penulis3: true,
-                        penulis4: true
+            if (formData.namaPenulis === "" || formData.namaPenulis2 === "" || formData.namaPenulis3 === "") {
+                alert("Lengkapi Penulis Sebelum Menambahkan")
+            }
+            else {
+                setFormData(prevState => {
+                    return {
+                        ...prevState,
+                        penulisLain: {
+                            penulis2: true,
+                            penulis3: true,
+                            penulis4: true
+                        }
                     }
-                }
-            })
+                })
+            }
         }
         else if (formData.penulisLain.penulis2) {
-            setFormData(prevState => {
-                return {
-                    ...prevState,
-                    penulisLain: {
-                        penulis2: true,
-                        penulis3: true,
-                        penulis4: false
+            if (formData.namaPenulis === "" || formData.namaPenulis2 === "") {
+                alert("Lengkapi Penulis Sebelum Menambahkan")
+            }
+            else {
+                setFormData(prevState => {
+                    return {
+                        ...prevState,
+                        penulisLain: {
+                            penulis2: true,
+                            penulis3: true,
+                            penulis4: false
+                        }
                     }
-                }
-            })
+                })
+            }
         }
         else {
-            setFormData(prevState => {
-                return {
-                    ...prevState,
-                    penulisLain: {
-                        penulis2: true,
-                        penulis3: false,
-                        penulis4: false
+            if (formData.namaPenulis === "") {
+                alert("Lengkapi Penulis Sebelum Menambahkan")
+            }
+            else {
+                setFormData(prevState => {
+                    return {
+                        ...prevState,
+                        penulisLain: {
+                            penulis2: true,
+                            penulis3: false,
+                            penulis4: false
+                        }
                     }
-                }
-            })
+                })
+            }
         }
     }
 
@@ -221,7 +236,7 @@ const Form = () => {
                     required
                 />
                 <input
-                    className="checkbox" 
+                    className="checkbox"
                     type="checkbox"
                     id="kapitalOtomatis"
                     onChange={handleChange}
@@ -231,7 +246,7 @@ const Form = () => {
                 <label htmlFor="kapitalOtomatis">Kapital Otomatis</label>
             </form>
             <Pustaka
-                dataBuku={formData}
+                formData={formData}
             />
         </div>
     )
