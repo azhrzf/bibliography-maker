@@ -121,7 +121,6 @@ const Pustaka = ({ formData }) => {
             </div>
             <div className={larikPustaka[0] && "larikPustaka"}>
                 <PustakaLarik larikPustaka={larikPustaka} hapusPustaka={hapusPustaka}/>
-                {/* <input type={larikPustaka[0] ? "button" : "hidden"} value="Kopi Semua"/> */}
             </div>
         </div>
     )
