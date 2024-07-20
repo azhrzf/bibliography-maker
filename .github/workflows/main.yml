@@ -1,4 +1,5 @@
 on: push
+name: 🚀 Deploy website on push
 jobs:
   web-deploy:
     name: 🎉 Deploy
@@ -13,12 +14,4 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
-        continue-on-error: true # Continue if this step fails
-
-      - name: Retry FTP Deploy if failed
-        if: failure() # This step runs if the previous step failed
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASS }}
+          local-dir: ./build/static/js
