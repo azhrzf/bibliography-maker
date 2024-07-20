@@ -1,25 +1,16 @@
-name: FTP Deployer
-on: push
-
+name: CI -> Deploy to My website
+on:
+  push:
+    branches: [ main, development ]
 jobs:
   build:
-    name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: FTP Deploy
-        uses: sand4rt/ftp-deployer@v1.8
+      - uses: actions/checkout@v4
+      # Here is the deployment action
+      - name: Upload from public_html via FTP
+        uses: airvzxf/ftp-deployment-action@latest
         with:
-          sftp: false # optional
-          host: ${{ secrets.FTP_SERVER }} # e.g. ftp.host.com or sftp.host.com (without ftp:// or ftps://)
-          port: 21 # optional, default is: 21
-          username: ${{ secrets.FTP_USER }} # FTP username
-          password: ${{ secrets.FTP_PASS }} # FTP password
-          remote_folder: daftar-pustaka # optional, remote path of your FTP server
-          local_folder: build # optional, local path, default is: dist
-          cleanup: false # optional, remove existing files inside FTP remote folder
-          include: '['build']' # optional, e.g. '['dist']'
-          exclude: '[]' # optional, e.g. '['node_modules/**', '.git/**', '*.env']'
-          passive: true # optional
+          server: ${{ secrets.FTP_SERVER }}
+          user: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASS }}
