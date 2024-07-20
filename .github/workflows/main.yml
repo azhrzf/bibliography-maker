@@ -20,6 +20,6 @@ jobs:
           remote_folder: daftar-pustaka # optional, remote path of your FTP server
           local_folder: build # optional, local path, default is: dist
           cleanup: false # optional, remove existing files inside FTP remote folder
-          include: "['build']" # optional, e.g. '['dist']'
-          exclude: "[]" # optional, e.g. '['node_modules/**', '.git/**', '*.env']'
+          include: '['build']' # optional, e.g. '['dist']'
+          exclude: '[]' # optional, e.g. '['node_modules/**', '.git/**', '*.env']'
           passive: true # optional
