@@ -1,17 +1,15 @@
 on: push
-name: 🚀 Deploy website on push
-jobs:
-  web-deploy:
-    name: 🎉 Deploy
-    runs-on: ubuntu-latest
-    steps:
-      - name: 🚚 Get latest code
-        uses: actions/checkout@v4
-
-      - name: 📂 Sync files
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASS }}
-          local-dir: ./build/static/js/
+name: FTP Deployer
+  uses: sand4rt/ftp-deployer@v1.8
+  with:
+    sftp: false # optional
+    host: ${{ secrets.FTP_SERVER }} # e.g. ftp.host.com or sftp.host.com (without ftp:// or ftps://)
+    port: 21 # optional, default is: 21
+    username: ${{ secrets.FTP_USER }} # FTP username
+    password: ${{ secrets.FTP_PASS }} # FTP password
+    remote_folder: daftar-pustaka # optional, remote path of your FTP server
+    local_folder: dist # optional, local path, default is: dist
+    cleanup: false # optional, remove existing files inside FTP remote folder
+    include: '[]' # optional, e.g. '['dist']'
+    exclude: '[]' # optional, e.g. '['node_modules/**', '.git/**', '*.env']'
+    passive: true # optional
