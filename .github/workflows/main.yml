@@ -15,4 +15,4 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
           local-dir: ./build/
-          server-dir: portfolio.azharfauzi.my.id/daftar-pustaka/
+          server-dir: ${{ secrets.FTP_SERVER_DIR }}
